@@ -1,0 +1,12 @@
+const dbConfig = require("../config/db.config.js");
+const mongoose = require("mongoose");
+mongoose.Promise = global.Promise;
+const db = {};
+db.mongoose = mongoose;
+db.url = dbConfig.url;
+db.student_answers = require("./student_answer.model.js")(mongoose);
+db.questionnaire = require("./questionnaire.model.js")(mongoose);
+db.passed_questionnaires = require("./passed_questionnaires.model.js")(mongoose);
+db.question = require("./question.model.js")(mongoose);
+db.users = require("./user.model.js")(mongoose);
+module.exports = db;

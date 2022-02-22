@@ -1,0 +1,8 @@
+deploy_prod:
+  type: deploy
+  script:
+    - cd /server/success-server && git pull && exit
+  environment:
+    name: production
+    url: 10.0.52.10
+
